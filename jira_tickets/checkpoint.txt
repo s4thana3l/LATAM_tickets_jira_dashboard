@@ -1,0 +1,59 @@
+CHECKPOINT - REVISÃO DO PROJETO JIRA TICKETS
+
+Objetivo:
+- revisar o que já foi concluído e o que falta fortalecer
+- manter um registro de melhorias futuras para robustez e apresentação
+- lembrar de evoluir o script sem perder o funcionamento atual
+
+Status atual do projeto:
+- a autenticação no Jira via API REST está funcionando
+- o filtro de tickets do mês atual está funcionando
+- a resposta JSON da API está sendo tratada corretamente
+- a exportação para Excel e CSV está funcionando
+- o arquivo Excel está sendo salvo com aba por mês
+- o código local está funcional e seguro com .env
+
+O que já ficou pronto:
+- leitura do .env com email + token
+- autenticação no Jira
+- busca de tickets por JQL
+- filtro por projeto e assignee
+- filtro por período do mês atual
+- processamento do JSON em tabela
+- exportação em Excel e CSV
+- criação/atualização da aba do mês no Excel
+- estilo visual da planilha
+- feedback no terminal
+
+O que ainda pode melhorar / robustez:
+- implementar paginação por janela de data como workaround compatível com o Jira do ambiente atual
+- manter a alternativa com startAt + maxResults como evolução futura, caso a API permita no ambiente correto
+- tratar erros melhor: 400, 401, 403, timeout, SSL, resposta não-JSON
+- organizar o código em funções
+- criar dashboard de resumo por status e assignee
+- preparar rotina mensal automatizada
+- melhorar a documentação final para time/chefia
+- revisar política de segurança e uso do repositório privado
+
+Pendências para retomada:
+- validar se a API aceita startAt + maxResults em outro ambiente Jira
+- melhorar tratamento de exceções e mensagens no terminal
+- separar o código em blocos/funções mais limpos
+- criar aba de resumo / dashboard no Excel
+- preparar a execução mensal com histórico por mês
+- documentar fluxo de uso e configuração do projeto
+- revisar se o README e a documentação estão prontos para apresentação
+
+Observações importantes:
+- o código atual já está funcional para uso local
+- a paginação por janela de data foi validada com sucesso no ambiente atual: 178 tickets do mês foram exportados sem erro
+- o .env continua sendo o local correto para credenciais
+- o .env não deve entrar no GitHub
+- o Excel deve ser fechado antes da execução para evitar bloqueio de arquivo
+- o funcionamento do projeto é baseado em JQL + API REST do Jira
+
+Quando abrir de novo:
+- retomar pela organização em funções
+- depois por tratamento de erros
+- em seguida por dashboard e execução mensal
+- por fim documentação final para apresentação.
